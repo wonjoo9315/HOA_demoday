@@ -16,7 +16,7 @@ def humans_list():
     humans_list = Humans.query.order_by(desc(Humans.date_created)).all()
     context['humans_list'] = humans_list
 
-    return render_template("index.html", context=context, active_tab='humans_tab')
+    return render_template("index.html", context=context, active_tab='humans_tab', title='HUMANS')
 
 
 @app.route('/<int:id>', methods=['GET'])
@@ -100,7 +100,7 @@ def manager_humans_delete(id):
 
 @app.route('/us', methods=['GET'])
 def aboutUs():
-    return render_template("aboutus/us.html", active_tab='aboutus_tab')
+    return render_template("aboutus/us.html", active_tab='aboutus_tab', title='ABOUT US')
 
 
 @app.route('/epilogue', methods=['GET'])
