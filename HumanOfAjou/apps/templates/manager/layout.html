@@ -1,0 +1,12 @@
+{% extends "manager/base.html" %}
+
+{% block layout %}
+    {% block navbar %}
+        {% include "manager/navbar.html" %}
+    {% endblock %}
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block extra_stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/hoa/detail.css') }}">
+<!--     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/hoa/style.css') }}">
+ -->{% endblock %}
+
+{% block content %}
+    <div class="Humans_content_post">
+        <div class="Humans_container">
+            <header>
+                <div class="Humans_header_background">
+                    <div class="Humans_background_inner">
+                        <div class="Humans_background_logo">
+                            <h3>HUMANS OF AJOU </h3>
+
+                            <div class="Humans_Long_block"></div>
+                            <p style="text-align:right">STORIES OF AJOU PEOPLE</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="Humans_transparent"></div>
+            <!-- Content -->
+            <!-- Button for Prev, Next Humans_detail Page -->
+            <div class="Prev_detail">
+                <span class="glyphicon glyphicon-chevron-left humans_glyphicon"></span>
+            </div>
+            <div class="Next_detail">
+                <span class="glyphicon glyphicon-chevron-right humans_glyphicon"></span>
+            </div>
+
+            <div class="Detail_Container">
+                <div class="Humans_detail">
+                    <!-- humans picture area -->
+                    <div class="Humans_detail_img_area">
+                        <div class="Humans_detail_img">
+                            <img class="Humans_detail_img" data-toggle="modal" data-target=".human-modal"
+                                 src="{{ url_for('photo_get', blob_key=humans.photo) }}"/>
+                        </div>
+                    </div>
+                    <!-- text1(interview) area -->
+                    <div class="Humans_detail_text1_area">
+                        {{ humans.text }}
+                    </div>
+                    <div class="Humans_border_thin"></div>
+                    {#                    <!-- text2(Q/A per month) area -->#}
+                    {#                    <div class="Humans_detail_text2_area">#}
+                    {#                        <h5>이 달의 질문#}
+                    {#                            <small>The question of This Month</small>#}
+                    {#                        </h5>#}
+                    {##}
+                    {#                        <br>#}
+                    {#                        <h6 class="Ask_this_month">"오늘 하루만 24시간이 아닌 48시간이 주어진다면 무엇을 하고 싶으세요?”<br>"If you got 48 hours#}
+                    {#                            for today, not 24 hours, what would you do?”</h6>#}
+                    {#                        <br>#}
+                    {#                        <br>#}
+                    {#                        "When I was 12 years old, a missionary saw me and suggested that I learn how to do flower#}
+                    {#                        arrangements. I said, ‘Dudes don’t do things like flower arrangements’. The missionary then#}
+                    {#                        said, ‘In life, there’s a difference between choosing not to do something because you don’t know#}
+                    {#                        it and being knowledgeable about something and then choosing not to do it.’ My view completely#}
+                    {#                        changed after he said this. So I learned how to do flower arrangements as well as some other#}
+                    {#                        things, but in the end I ended up choosing to run my own flower shop. 30 years have passed since#}
+                    {#                        that moment.”#}
+                    {#                        <br>#}
+                    {#                        <br>#}
+                    {#                        “제가 12살 때였는데, 선교사가 저보고 꽃을 배우라고 권하더라구요. 그래서 제가 ‘사내새끼가 무슨 꽃을 배워요.’라고 했어요. 그랬더니 선교사가 ‘살면서 모르고 안 하는#}
+                    {#                        것과 알고 안 하는 것은 다르다’라고 말하더라구요. 그 말에 제가 완전히 넘어갔어요. 그래서 그 후 꽃을 배웠는데, 다른 것도 좀 하다가 결국 꽃집 운영을 선택했어요.#}
+                    {#                        그렇게 30년이 흘렀죠.”#}
+                    {#                    </div>#}
+                    {#                    <div class="Humans_detail_button_area">#}
+                    {#                        <div class="btn btn-default btn-month-question">#}
+                    {#                            <span>다른 응답 보러가기</span>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                </div>
+                <!-- image modal -->
+                <div class="modal fade human-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <img class="Detail_img_modal" src="{{ url_for('photo_get', blob_key=humans.photo) }}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Humans-Detail Content -->
+        </div>
+    </div>
+{% endblock %}

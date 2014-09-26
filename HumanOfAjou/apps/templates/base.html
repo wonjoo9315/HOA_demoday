@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HOA :: {{ title }}</title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <!-- start with bootstrap -->
+    <link rel="stylesheet" type="text/css" href=".{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link href="{{ url_for('static', filename='css/flat-ui.css') }}" rel="stylesheet">
+
+    <!-- for fontawesome -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <!-- responsive web -->
+    <!-- responsive app end -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/small-logo.png') }}"/>
+    <link rel="canonical" href="http://www.inwebson.com/demo/blocksit-js/demo2/"/>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hoa/index.css') }}" media='screen'/>
+
+
+    {% block stylesheets %}
+    {% endblock %}
+    {% block extra_stylesheets %}
+    {% endblock %}
+</head>
+
+<body>
+{% block layout %}
+{% endblock %}
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- from this is Blocksit library -->
+
+<!--SHARE THIS-->
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "081889e0-d3f0-4ff6-9168-f8314307ca9e", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+<!-- start with flat_UI -->
+<script src="{{ url_for('static', filename='js/jquery-ui.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/blocksit.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+<script src="{{ url_for('static', filename='js/flat-ui.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/flatui-checkbox.js') }}"></script>
+<script src="{{ url_for('static', filename='js/flatui-radio.js') }}"></script>
+<script src="{{ url_for('static', filename='js/hoa.js') }}"></script>
+</body>
+</html>
+

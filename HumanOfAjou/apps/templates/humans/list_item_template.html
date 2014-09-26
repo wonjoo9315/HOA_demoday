@@ -1,0 +1,22 @@
+<div class="grid">
+    <a href="{{ url_for('humans_detail', id=humans.id) }}" style = "text-decoration:none; color:black;font-color:black">
+        <div class="imgholder">
+            {% if humans.photo %}
+                <img src="{{ url_for('photo_get_resized', blob_key=humans.photo) }}"/>
+
+            {% else %}
+                <p>이미지가 없습니다.</p>
+            {% endif %}
+        </div>
+
+        <div class="grid_contents">
+            <p> {{ humans.text }} </p>
+            <br>
+
+            <p> {{ humans.q_month }} </p>
+        </div>
+        <i class="fa fa-eye"></i><span class="Humans_counts">900</span>
+        <i class="fa fa-heart"></i><span class="Humans_counts">300</span>
+        <i class="fa fa-share-alt"></i><span class="Humans_counts">20</span>
+    </a>
+</div>

@@ -1,0 +1,123 @@
+.no-list {
+    padding: 10px;
+    text-align: center;
+}
+
+.float-right {
+    float: right;
+}
+
+.bottomButtons {
+    margin: 10px 0px 0px 0px;
+    padding: 10px;
+    text-align: center;
+}
+
+.llCommentList {
+    margin: 10px 0px 0px 0px;
+}
+
+.Hidden {
+    display: none;
+}
+
+.llArticleCategories {
+    margin: 0px 0px 20px 0px;
+}
+
+.col {
+    float: left;
+}
+
+.llCommentIndex {
+    width: 15px;
+    margin: 0px 5px 0px 0px;
+}
+
+.llCommentContent {
+    max-width: 580px;
+}
+
+.llCommentExtra {
+    max-width: 500px;
+    float: right;
+}
+
+.llUserPictureInNav > img {
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+}
+
+.navbar-nav>li>a {
+    line-height: 35px;
+}
+.navbar-brand {
+    float: left;
+    padding: 0px 15px;
+    font-size: 18px;
+    line-height: 65px;
+    height: 65px;
+}
+
+/**
+*** @google login button
+**/
+
+.googleLoginBtn {
+    display: inline-block;
+    background: #cc3732;
+    color: white;
+    border-radius: 5px;
+}
+
+.googleLoginBtn:hover {
+    background: #e74b37;
+    cursor: hand;
+}
+
+.googleLoginBtn span.label {
+    font-weight: bold;
+}
+
+.googleLoginBtn span.icon {
+    background: url('https://google-developers.appspot.com/+/images/branding/btn_red_32.png') transparent 10px 50% no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+}
+
+.googleLoginBtn span.buttonText {
+    vertical-align: middle;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.well{
+    height: 120px;
+}
+
+.Humans_title{
+    float:left;
+}
+.Humans_buttons{
+    float:right;
+    padding-top:20px;
+}
+
+.manager_list{
+    float: right;
+}
+.Humans_title1{
+    height: 40px;
+    margin: 0px;
+}
+.Humans_title1 h1{
+    float: left;
+}
+.manager_list{
+    margin-top: 18px;
+}

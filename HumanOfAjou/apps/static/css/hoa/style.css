@@ -1,0 +1,819 @@
+﻿/*여기부터 기존에 있던 라이브러리 css*/
+body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-family: "Nanum_Gothic";
+    font-size: 15px;
+
+}
+
+body p {
+    font-size: 13px;
+
+}
+
+header, section, footer, hgroup {
+    display: block;
+}
+
+}
+a {
+    color: #35BFFF;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: #91DCFF;
+}
+
+/* Header */
+#header {
+    width: 100%;
+    background: #000;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px 0;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+#header h1 {
+    padding: 0 20px;
+    margin: 5px 0;
+    text-shadow: 2px 1px 1px #333, 2px 2px 1px #888;
+    color: #EAEAEA;
+    float: left;
+    font-size: 27px;
+}
+
+#backlinks {
+    float: right;
+    padding: 0 20px;
+    line-height: 22px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#backlinks a {
+    text-align: right;
+    display: block;
+}
+
+/* Footer */
+
+
+/* clearfix */
+.clearfix {
+    clear: both;
+}
+
+/* wrapper css */
+#wrapper {
+    margin-top: 70px;
+    width: 100%;
+}
+
+#wrapper hgroup {
+    text-align: center;
+}
+
+#wrapper h2 {
+    margin: 5px 0;
+    color: #FF6D99;
+    text-shadow: 1px 1px 2px #A50031;
+    font-size: 33px;
+    font-family: Arial Narrow, Arial, sans-serif;
+}
+
+#wrapper h3 {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 18px;
+    text-shadow: 1px 1px 0 #fff;
+    color: #888;
+    margin: 5px 0;
+}
+
+#container {
+    position: relative;
+    width: 1100px;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+
+}
+
+.grid {
+    width: 188px;
+    min-height: 100px;
+    padding: 5px;
+    background: #fff;
+
+    font-size: 12px;
+    float: left;
+
+    /*	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+        -moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+        -webkit-box-shadow: 0 1px 3px rgba(34,25,25,15.4);
+        */
+    /*	-webkit-transition: top 1s ease, left 1s ease;
+        -moz-transition: top 1s ease, left 1s ease;
+        -o-transition: top 1s ease, left 1s ease;
+        -ms-transition: top 1s ease, left 1s ease;
+    */
+}
+
+.grid a:hover {
+    border: solid rgba(0, 255, 255, 0.2);
+
+}
+
+.grid strong {
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+    display: block;
+    padding: 0 0 5px;
+    font-size: 17px;
+}
+
+.grid .meta {
+    text-align: right;
+    color: #777;
+    font-style: italic;
+}
+
+.grid .imgholder img {
+    min-width: 100%;
+    max-width: 100%;
+    background: #ccc;
+    display: block;
+}
+.grid a{
+     text-decoration : none; color : #000;
+}
+@media screen and (max-width: 1240px) {
+    body {
+        overflow: auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #backlinks {
+        float: none;
+        clear: both;
+    }
+
+    #backlinks a {
+        display: inline-block;
+        padding-right: 20px;
+    }
+
+    #wrapper {
+        margin-top: 90px;
+    }
+}
+
+/*여기까지 기존에 있던 라이브러리 css*/
+/* 실제 css 시작*/
+/*HEADER START*/
+/*BACK GROUND IMAGE*/
+.background-image {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -9999;
+
+    display: block;
+    background: url('../../images/library.jpeg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+
+}
+
+.Header_blank_human {
+    height: 150px;
+}
+
+.Header_container {
+    height: 707px;
+}
+
+/*Nav_bar*/
+.Header_nav_location {
+    width: 400px;
+    margin: auto;
+}
+
+#Header_nav_bar {
+    z-index: 99;
+    text-align: center;
+
+}
+
+/*Nav-bar-end*/
+
+/*BACK GROUND IMAGE END*/
+.container_all {
+    font-family: 'Nanum_Gothic';
+
+}
+
+.Logo_area {
+    height: 630px;
+}
+
+.Logo_img img {
+    width: 375px;
+}
+
+.Logo_img {
+    height: 400px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 5%;
+    margin-bottom: 0;
+    width: 375px;
+
+}
+
+/*.Logo_img img{
+	box-shadow: 0px 0px 5px #fff;
+}*/
+.FacebookLike {
+    height: 50px;
+}
+
+.Facebook_div {
+    width: 375px;
+    height: 30px;
+    background-color: #3b5998;
+    border-radius: 8px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.Facebook_div p {
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    padding-top: 7px;
+}
+
+.navbar-nav li {
+    font-family: 'Nanum_Gothic';
+    font-size: 10px;
+}
+
+.humans-navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0;
+}
+
+.humans-navbar-center {
+    width: 55%;
+    margin: 0 auto;
+
+}
+
+#wrapper {
+    margin-top: 5px;
+    width: 100%;
+}
+
+.date_and_category {
+    padding-bottom: 60px;
+    height: 130px;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.date_humans {
+    margin-top: 45px;
+    padding-top: 10px;
+    width: 96%;
+    float: left;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-top-left-radius: 8px;
+    padding-left: 30px;
+
+}
+
+.date_humans p {
+    font-color: white;
+    color: white;
+}
+
+/*HEADER 끝*/
+/*BODY 시작*/
+/*THIS IS PICTURE*/
+.Picture_upload {
+    height: 175px;
+}
+
+.Picture_upload_contents {
+    height: 80%;
+    width: 76%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #ECF0F1;
+    padding: 5px;
+
+}
+
+/*END PICTURE*/
+.grid_contents {
+    padding: 15px 10px;
+}
+
+.grid_contents p {
+    font-size: 13px;
+}
+
+#picture_upload_button_size_up {
+    width: 100%;
+}
+
+/*THIS IS CATEGORY*/
+.contents_category_bsj {
+
+    float: right;
+
+}
+
+.drop_box_location {
+    margin-right: 13%;
+    float: right;
+    width: 120px;
+    height: 44px;
+}
+
+/*THIS IS EPILOGUE*/
+#epilogue_list {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    padding: 50px 10%;
+    padding-bottom: 10px;
+    /*background-color: rgba(0,0,0,0.5);*/
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.epilogue_title {
+    width: 100%;
+    border-bottom: 2px solid #363636;
+    font-family: 돋 움, Dotum, 굴 림, Gullim, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.epilogue_board {
+    width: 95%;
+    height: 120px;
+    margin: 0px auto;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+.report_date {
+    width: 10%;
+    margin: 0 auto;
+    float: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.month {
+    display: block;
+    margin: 0 auto;
+    font: 12px Tahoma, Helvetica, sans-serif;
+    color: #666;
+}
+
+.day {
+    margin: 0 auto;
+    font: 24px Tahoma, Helvetica, sans-serif;
+    color: #222;
+    font-weight: bold;
+}
+
+.reporter_line {
+    width: 90%;
+    float: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.reporter_thumb {
+    width: 52px;
+    float: left;
+}
+
+.reporter_name {
+    margin-top: -5px;
+    margin-left: 60px;
+    font-family: '나눔고딕', NanumGothic, '돋움', Dotum, Helvetica, AppleSDGothicNeo-Medium, AppleGothic, sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.reporter_aticle_name {
+    margin-left: 60px;
+    font-family: '나눔고딕', NanumGothic, '돋움', Dotum, Helvetica, AppleSDGothicNeo-Medium, AppleGothic, sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+/* EPILOGUE DETAIL */
+.epilogue_detail {
+    position: relative;
+    width: 1100px;
+    margin: 0 auto 25px;
+
+    background-color: rgba(255, 255, 255, 0.8);
+    font-family: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+    letter-spacing: 0.01rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+.epilogue_detail_title {
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.epilogue_detail_title_main {
+    font-family: '나눔고딕', '돋움', "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+.epilogue_detail_title_sub {
+    color: rgba(0, 0, 0, 0.65);
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    letter-spacing: -0.02em;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.epilogue_detail_body {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: left;
+}
+
+.epilogue_post_cards {
+    /*background-color: rgba(0,0,0,0.2);*/
+    opacity: 1;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    text-align: left;
+    position: relative;
+    right: 0%;
+    -webkit-transition: right .2s;
+    -moz-transition: right .2s;
+    -ms-transition: right .2s;
+    -o-transition: right .2s;
+    transition: right .2s;
+}
+
+.layoutSingleColumn {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.supplementalPostContent {
+    filter: alpha(opacity=0);
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 1;
+    -webkit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -ms-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    transition: opacity .2s;
+}
+
+.epilogue_post_card_layout {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+#epilogue_post_card_left {
+    /*float: left;*/
+}
+
+#epilogue_post_card_right {
+    /*float: right;*/
+}
+
+.epilogue_post_card_head {
+    margin-right: 20px;
+    font-weight: 700;
+    font-style: normal;
+    padding: 12px 0 0;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: .1em;
+    color: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.cards-heading:first-child {
+    margin-top: 0;
+}
+
+.epilogue_post_card_body {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 35px;
+    font-family: "jaf-bernino-sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    font-style: normal;
+    width: 100%;
+
+}
+
+.card-imageWrapper {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 0;
+}
+
+.card_thumb {
+    display: block;
+    background-position: center;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 65px;
+    height: 65px;
+    line-height: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.epilogue_post_card_content {
+    word-wrap: break-word;
+    padding-left: 100px;
+    margin-top: -40px;
+    min-height: 80px;
+}
+
+.epilogue_post_card_name {
+    margin-right: 20px;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.epilogue_post_card-description {
+    font-size: 14px;
+    line-height: 1.3;
+    margin-bottom: 4px;
+}
+
+/* White container body */
+.Humans_white_container {
+    width: 86%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 50px 40px;
+    padding-top: 80px;
+    background-color: rgba(255, 255, 255, 0.8);
+
+}
+
+/* black container body(full) */
+.Humans_black_container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 50px 40px;
+    padding-top: 80px;
+    background-color: rgba(0, 0, 0, 0.3);
+
+}
+
+/* transparent container body(full) */
+.Humans_transparent_container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 50px 40px;
+    padding-top: 80px;
+    background-color: rgba(0, 0, 0, 0.0);
+
+}
+
+/*UPLOAD FORM*/
+.upload_form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*BODY 끝*/
+
+/*About Us 시작*/
+.AboutUs_Container {
+
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 1);
+
+    /*border-radius: 5px;*/
+}
+
+.AboutUs_title {
+
+    padding: 20px;
+    height: 140px;
+    font-family: Helvetica, "맑은 고딕";
+    border-bottom: transparent solid 2px;
+    /* background-color: rgba(0,0,0,0.2); */
+
+}
+
+.border {
+    display: block;
+    height: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 100px;
+    z-index: 99;
+    background: none repeat scroll 0 0 #999999;
+
+}
+
+.AboutUs {
+    width: 100%;
+    height: 300px;
+    /*border: 1px solid gray;*/
+    margin-bottom: 40px;
+    /*background-color: rgba(255,255,255,0.5);*/
+    border-bottom: rgba(0, 0, 0, 0.2) solid 10px;
+
+}
+
+.AboutUs_img_area {
+    float: left;
+    width: 40%;
+    height: 100%;
+    /*border: 1px solid red;*/
+    border-radius: 5px;
+    text-align: center;
+    padding: auto;
+    /*vertical-align: middle;*/
+
+}
+
+#AboutUs_img {
+    display: block;
+    height: 96px;
+    margin-top: 85px;
+    /*margin-top: auto;
+    margin-bottom: auto;*/
+    /*max-width: 96px;*/
+
+}
+
+.AboutUs_text_area {
+    font-family: "맑은 고딕";
+    float: left;
+    width: 60%;
+    height: 100%;
+    /*border: 1px solid blue;*/
+
+    border-radius: 5px;
+    padding: 40px;
+    padding-top: 20px;
+}
+
+.AboutUs_introduce {
+    padding: 20px;
+}
+
+.Members_title {
+    margin: 20px 0px;
+    margin-top: 200px;
+    font-family: Helvetica;
+    border-bottom: transparent solid 2px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.Members_title span {
+    padding-left: 30px;
+    font-size: 20px;
+    color: black;
+}
+
+.Members {
+    width: 100%;
+    height: 500px;
+    /*	border: 1px solid gray;
+        border-radius: 5px;*/
+    /*background-color: rgba(255,255,255,0.5);*/
+    margin-bottom: 60px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-bottom: rgba(0, 0, 0, 0.2) solid 10px;
+
+}
+
+.Members_img_area {
+    float: left;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#Mebers_img {
+    height: 100%;
+    border-radius: 10px;
+
+    /*width: 100%;*/
+}
+
+div#bg {
+    background-image: url(../images/bg.jpeg);
+    background-color: black;
+}
+
+div#bg-blur {
+    background-image: url(../images/bg_blur.png);
+    background-color: black;
+}
+
+.img-src {
+    position: fixed;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1
+}
+
+.blurred-img {
+    opacity: 0
+}
+
+@media (max-width: 480px) {
+    .Header_nav_location {
+        display: none;
+    }
+}
+
+
+.Humans_Navbar {
+    background: transparent;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -ms-border-radius: 0px;
+}
+/*
+.Humans_Navbar.Scrolled {
+    background: #ffffff;
+}*/

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HOA :: Humans Section</title>
+	<meta name="description" content="BlocksIt.js jQuery plugin Demonstration #2 Pinterest dynamic grid with CSS3 Transitions by inWebson.com"/>
+	<meta name="keywords" content="demonstration,demo,jquery,blocksit.js,css3,dynamic,grid,layout,inwebson"/>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<!-- from this is Blocksit library -->
+	<!-- start with flat_UI -->
+	<script src="../static/js/jquery-ui.js"></script>
+	<script src="../static/js/style.js"></script>
+
+	<link rel='stylesheet' href='../static/css/thumbnail_bsj.css' media='screen' />
+		<!-- start with bootstrap -->
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/flat-ui.css">
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../static/js/blocksit.min.js"></script>
+<script src="../static/js/bootstrap.js"></script>
+
+<!-- for fontawesome -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- responsive web -->
+<script>
+$(document).ready(function() {
+	//vendor script
+	$('#header')
+	.css({ 'top':-50 })
+	.delay(1000)
+	.animate({'top': 0}, 800);
+	
+	$('#footer')
+	.css({ 'bottom':-15 })
+	.delay(1000)
+	.animate({'bottom': 0}, 800);
+	
+	//blocksit define
+	$(window).load( function() {
+		$('#container').BlocksIt({
+			numOfCol: 5,
+			offsetX: 4,
+			offsetY: 4
+		});
+	});
+	
+	//window resize
+	var currentWidth = 1000;
+	$(window).resize(function() {
+		var winWidth = $(window).width();
+		var conWidth;
+		if(winWidth < 660) {
+			conWidth = 440;
+			col = 2
+		} else if(winWidth < 880) {
+			conWidth = 660;
+			col = 3
+		} else if(winWidth < 1000) {
+			conWidth = 880;
+			col = 4;
+		} else {
+			conWidth = 1000;
+			col = 5;
+		}
+		
+		if(conWidth != currentWidth) {
+			currentWidth = conWidth;
+			$('#container').width(conWidth);
+			$('#container').BlocksIt({
+				numOfCol: col,
+				offsetX: 4,
+				offsetY: 4
+			});
+		}
+	});
+});
+
+</script>
+<!-- responsive app end -->
+<link rel="shortcut icon" href="http://www.inwebson.com/wp-content/themes/inwebson2/favicon.ico" />
+<link rel="canonical" href="http://www.inwebson.com/demo/blocksit-js/demo2/" />
+</head>
+
+<body>
+	<div class ="Humans_content_post">
+		<div class = "Humans_container">
+			<header>
+				
+				<div class = "Humans_header_background">
+					<div class= "Humans_background_inner">
+						<div class = "Humans_background_logo">		
+							<h3>HUMANS OF AJOU </h3>
+							<div class="Humans_Long_block"></div>
+							<p style ="text-align:right">STORYS OF AJOU PEOPLE</p>
+
+						</div>
+
+					</div>	
+				</div>
+			</header>
+
+			<div class = "Humans_transparent"></div>
+			<section id="wrapper">
+				
+				<div class ="top-wrapper">
+					<!-- THIS IS CATEGORY -->
+					<div class = "Humans_title_location">
+						<h2 style ="text-align:center" >SURROUNDS IN AJOU UNIVERSIRY</h2>
+
+					</div>
+					<p style = "text-align:center">There were 20 posts published in June 2014.</p>
+					<!-- <div class ="Humans_border"></div> -->
+					<div class = "contents_category_bsj" >
+							<label class="radio">
+							 <input type="radio" name="group1" value="1" data-toggle="radio">
+							  Korean
+							</label>
+
+							<label class="radio">
+							  <input type="radio" name="group1" value="2" data-toggle="radio" checked>
+							  English
+							</label>
+							<div class="dropdown" id="contents_drop_down_position">
+								<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Categorys<span class="caret"></span></button>
+								<span class="dropdown-arrow"></span>
+								<ul class="dropdown-menu">
+									<li><a href="{{ url_for('humans_list') }}">Date Listed</a></li>
+									<li><a href="{{ url_for('humans_thumbnail') }}">Thumbnails</a></li>
+								</ul>
+							</div>
+
+						
+					</div>
+					<!-- END CATEGORY -->
+				</div>
+				<div class = "Humans_border"></div>
+				<div class = "How_many_achieved">
+					<h5>Achieves for June 2014</h5>
+					<p> there were 20 posts published in June 2014</p>
+				</div>
+				<div id="container">
+					<div class="grid" id="thumnail_grid">
+						<div class="imgholder">
+							<div class ="Humans_detail_img">
+						<img class ="Humans_detail_img" data-toggle="modal" data-target=".human-modal" src="../static/images/img1.jpg" />
+					</div>		
+						</div>
+
+					</div>
+					<div class="grid" id="thumnail_grid">
+						<div class="imgholder">
+							<img src="http://www.inwebson.com/demo/blocksit-js/demo2/images/img26.jpg" />
+						</div>
+
+					</div>
+					<div class="grid" id="thumnail_grid">
+						<div class="imgholder">
+							<img src="http://www.inwebson.com/demo/blocksit-js/demo2/images/img15.jpg" />
+						</div>
+					</div>
+					<div class="grid" id="thumnail_grid">
+						<div class="imgholder">
+							<img src="http://www.inwebson.com/demo/blocksit-js/demo2/images/img23.jpg" />
+						</div>
+					</div>
+					<div class="grid" id="thumnail_grid">
+						<div class="imgholder">
+							<img src="http://www.inwebson.com/demo/blocksit-js/demo2/images/img17.jpg" />
+						</div>
+					</div>
+					<div class="grid" id="thumnail_grid">
+						<div class="imgholder">
+							<img src="http://www.inwebson.com/demo/blocksit-js/demo2/images/img22.jpg" />
+						</div>
+					</div>
+					<div class="grid" id="thumnail_grid">
+						<div class="imgholder">
+							<img src="http://www.inwebson.com/demo/blocksit-js/demo2/images/img16.jpg" />
+						</div>
+					</div>
+					<div class="grid" id="thumnail_grid">
+						<div class="imgholder">
+							<img src="http://www.inwebson.com/demo/blocksit-js/demo2/images/img21.jpg" />
+						</div>
+					</div>
+					<div class="grid" id="thumnail_grid">
+						<div class="imgholder">
+							<img src="http://www.inwebson.com/demo/blocksit-js/demo2/images/img28.jpg" />
+						</div>
+					</div>
+					<div class="grid" id="thumnail_grid">
+						<div class="imgholder">
+							<img src="http://www.inwebson.com/demo/blocksit-js/demo2/images/img2.jpg" />
+						</div>
+					</div>
+					<div class="grid" id="thumnail_grid">
+						<div class="imgholder">
+							<img src="http://www.inwebson.com/demo/blocksit-js/demo2/images/img24.jpg" />
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</body>

@@ -1,0 +1,30 @@
+{% extends "manager/layout.html" %}
+
+{% block content %}
+    <div class="llArticleList">
+        <div class="page-header">
+            <h1>HUMANS LIST
+                <a href="{{ url_for('manager_humans_create') }}">글쓰기</a>
+            </h1>
+        </div>
+        {% if context.humans_list %}
+            {% for humans in context.humans_list %}
+                <div class="well">
+                    <div class="Humans_boxes">
+                        <div class="Humans_title">
+                            <h1><a> {{ humans.date_created }} </a></h1>
+                        </div>
+                        <div class="Humans_buttons">
+                            <a href="{{ url_for('manager_humans_update', id=humans.id) }}"><h4>글수정</h4></a>
+                            <a href="{{ url_for('manager_humans_delete', id=humans.id) }}"><h4>삭제</h4></a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="no-list">
+                글이 존재하지 않습니다. 새로운 글을 등록해주세요.
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block extra_stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/hoa/index.css') }}">
+<!--     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/hoa/style.css') }}"> -->
+{% endblock %}
+
+{% block content %}
+    <div class="Humans_content_post">
+        <div class="Humans_container">
+            <header>
+                <div class="Humans_header_background">
+                    <div class="Humans_background_inner">
+                        <div class="Humans_background_logo">
+                            <h3>HUMANS OF AJOU </h3>
+
+                            <div class="Humans_Long_block"></div>
+                            <p style="text-align:right">STORIES OF AJOU PEOPLE</p>
+
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="Humans_transparent"></div>
+            <section id="wrapper">
+                <div class="top-wrapper">
+                    <!-- THIS IS CATEGORY -->
+                    <div class="Humans_title_location">
+                        <h2 style="text-align:center">HUMANS IN AJOU UNIVERSIRY</h2>
+                    </div>
+                    <p style="text-align:center">There were 20 posts published in June 2014.</p>
+                    <!-- <div class ="Humans_border"></div> -->
+                    <div class="contents_category_bsj">
+                        <label class="radio">
+                            <input type="radio" data-toggle="radio" name="optionsRadios" id="optionsRadios1"
+                                   value="option1"
+                                   data-radiocheck-toggle="radio" required="" class="custom-radio"><span
+                                class="icons"><span
+                                class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            Korean
+                        </label>
+                        <label class="radio">
+                            <input type="radio" data-toggle="radio" name="optionsRadios" id="optionsRadios2"
+                                   value="option1"
+                                   data-radiocheck-toggle="radio" checked="" class="custom-radio"><span
+                                class="icons"><span
+                                class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            English
+                        </label>
+
+                        <div class="dropdown" id="contents_drop_down_position">
+                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Categorys<span
+                                    class="caret"></span></button>
+                            <span class="dropdown-arrow"></span>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url_for('humans_list') }}">Date Listed</a></li>
+                                <li><a href="{{ url_for('humans_thumbnail') }}">Thumbnails</a></li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                    <!-- END CATEGORY -->
+                </div>
+                <div id="container">
+                    {% if context.humans_list %}
+                        {% for humans in context.humans_list %}
+                            {% include "humans/list_item_template.html" %}
+                        {% endfor %}
+                    {% else %}
+                        <div class="no-list">
+                            글이 존재하지 않습니다. 새로운 글을 등록해주세요.
+                        </div>
+                    {% endif %}
+
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

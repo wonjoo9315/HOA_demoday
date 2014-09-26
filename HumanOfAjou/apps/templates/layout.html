@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block layout %}
+    {% block navbar %}
+        {% include "navbar.html" %}
+    {% endblock %}
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% block footer %}
+        {% include "manager/footer.html" %}
+    {% endblock %}
+{% endblock %}

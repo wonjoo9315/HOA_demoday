@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default Humans_Navbar" role="navigation" id="Humans_nav_bar_1">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+            <span class="sr-only">Toggle navigation</span>
+        </button>
+        <a class="navbar-brand" href="#">
+            <img src="../static/images/middle-logo.png" class="HumansHeaderLogo">
+        </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-01">
+        <ul class="nav navbar-nav">
+            <li
+            {% if active_tab == 'aboutus_tab' %} class="active"{% endif %}><a href="{{ url_for('aboutUs') }}">ABOUT
+            US</a></li>
+            <li
+            {% if active_tab == 'humans_tab' %} class="active"{% endif %}><a
+                href="{{ url_for('humans_list') }}">HUMANS</a></li>
+            <li
+            {% if active_tab == 'ajou_tab' %} class="active"{% endif %}><a href="{{ url_for('aboutUs') }}">AJOU</a></li>
+        </ul>
+    </div>
+</nav>
