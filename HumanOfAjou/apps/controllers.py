@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
-from flask import render_template, request, url_for, flash, redirect, make_response
+from flask import render_template, request, url_for, flash, redirect, make_response, jsonify
 from apps import app, db
 from sqlalchemy import desc
 from google.appengine.api import images
-from apps.models import Humans, Ajou
+from apps.models import Humans, Ajou, ViewRecord, LikeRecord
 from apps.forms import HumansForm, AjouForm
 from google.appengine.ext import blobstore
 from werkzeug.http import parse_options_header
 import logging
+import json
+from apps.APIResponse import APIResponse
 
 
 @app.route('/', methods=['GET'])
@@ -22,7 +24,64 @@ def humans_list():
 @app.route('/<int:id>', methods=['GET'])
 def humans_detail(id):
     humans = Humans.query.get(id)
-    return render_template("humans/detail.html", humans=humans, active_tab='humans_tab')
+
+    try:
+        exist_view = ViewRecord.query.filter_by(humans=humans, ip=request.remote_addr).count()
+    except:
+        exist_view = None
+
+    if exist_view:
+        pass
+    else:
+        vr = ViewRecord(
+            humans=humans,
+            ip=request.remote_addr
+        )
+        db.session.add(vr)
+        db.session.commit()
+
+        humans.view_count = humans.view_count + 1
+        db.session.commit()
+    return render_template("humans/detail.html", humans=humans, active_tab='humans_tab', title='HUMANS')
+
+
+@app.route('/humans/like', methods=['POST'])
+def humans_like():
+    request_data = json.loads(request.data)
+    humans_id = request_data.get('humans_id')
+
+    humans = Humans.query.get(humans_id)
+
+    try:
+        exist_like = LikeRecord.query.filter_by(humans=humans, ip=request.remote_addr).count()
+    except:
+        exist_like = None
+
+    if exist_like:
+        return jsonify(
+            APIResponse(
+                APICode=409,
+                APIMessage=u"이미 좋아요 했습니다."
+            ).generate
+        )
+    else:
+        like_record = LikeRecord(
+            humans=humans,
+            ip=request.remote_addr
+        )
+        db.session.add(like_record)
+        db.session.commit()
+
+        humans.like_count = humans.like_count + 1
+        db.session.commit()
+
+        return jsonify(
+            APIResponse(
+                APICode=200,
+                APIMessage=u"좋아요 했습니다.",
+                APIPayload=humans.like_count
+            ).generate
+        )
 
 
 @app.route('/manager', methods=['GET'])
@@ -152,4 +211,3 @@ def photo_get_resized(blob_key):
             response = make_response(thumbnail)
             response.headers['Content-Type'] = blob_info.content_type
             return response
-
