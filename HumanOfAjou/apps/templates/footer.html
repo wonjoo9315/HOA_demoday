@@ -1,43 +1,37 @@
-<!-- 	여기서부터 FOOTER -->
-<div class="Humans_footer">
-    <div class="Humans_footer_container">
-        <div class="Footer_left">
-            <div class="Footer_left">
-                <ul>
-                    <li>HUMANS</li>
-                    <li>AJOU</li>
-                    <li>EPILOGUE</li>
-                    <li>THUMBNAIL</li>
-                    <li>ABOUT US</li>
-                </ul>
-            </div>
-            <div class="Footer_right">
-                <p>이 사이트는 비 영리를 목적으로 만들어졌습니다.<br>사이트의 운영금은 후원금으로 운영되고 있습니다. <br>
-                    후원을 하고 싶으시다면 <br>
-                    477002-04-078058 국민 방성주
-                </p>
+{% block footer %}
+   <div class = "FooterBsj">
+        <div class = "FooterContainer">
+             <div class = "ShareThis">
+                <span class='st_facebook_hcount' displayText='Facebook'></span>
+                <span class='st_email_hcount' displayText='Email'></span>
             </div>
 
+            <div class ="FooterContents">
+                <div class = "col-xs-6 col-md-4">
+                    <div class = "col-xs-6" id= "FooterImage">
+                         <img src="../static/images/middle-logo.png" alt = "Humans of ajou" style="width:110px;height:110px"/>
+                    </div>
+                    <div class = "col-xs-6">
+                        <ul class= "LinkToList" id = "FooterCategory">
+                            <li >HUMANS</li>
+                            <li >AJOU </li>
+                            <li >EPILOGUE</li>
+                            <li >THUMBNAIL</li>
+                            <li >ABOUT US</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class = "col-xs-12 col-lg-8" id = "FooterDonate">
+                    <p >
+                    Humans Of AJou university(이하 "휴먼스오브아주")는 비영리 사이트 입니다. <br>
+                    사이트 운영금은 전부 "휴먼스오브아주"를 운영하는 HOA팀의 개인 사비로 운영되고 있습니다.<br>모든 사이트의 컨텐츠는 HumansofAjou에게 귀속되어 있습니다.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="Footer_right">
-            <p>If you want to subscribe our Website</p>
-
-            <div class="Footer_left_half">
-                <input type="text" placeholder="Email" class="form-control" id="Humans_float_left"/>
-            </div>
-            <div class="Footer_left_half">
-                <button class="btn btn-primary" id="Humans_float_left">
-                    Subscribe
-                </button>
-            </div>
-
-            <div class="Icon_gather">
-                <div class="Humans_icon" id="float_left"></div>
-                <div class="Humans_icon" id="float_left"></div>
-                <div class="Humans_icon" id="float_left"></div>
-
-            </div>
-            <p>Copyright © 2014 HUMANSOFAJOU. All rights reserved.</p>
+        <div class = "AllrightReserved">
+            <p style = "Text-align:center;">Copyright © 2014 HUMANSOFAJOU. All rights reserved.</p>
         </div>
     </div>
-</div>
+
+{% endblock %}

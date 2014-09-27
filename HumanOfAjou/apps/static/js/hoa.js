@@ -94,4 +94,32 @@ $(document).ready(function () {
             $('.Humans_Navbar').attr('style', 'background: transparent;');
         }
     });
+
+    // postJSON
+    $.postJSON = function (url, data, success) {
+        return $.ajax({
+            type: 'POST',
+            url: url,
+            data: data,
+            success: success,
+            dataType: 'json',
+            contentType: "application/json; charset=UTF-8"
+        });
+    };
+
+    // Humans Like
+    $('.js-humansLike').on('click', function() {
+        var humans_id = $(this).data('humans-id');
+
+        var jsonData = new Object();
+        jsonData.humans_id = humans_id;
+        jsonData = JSON.stringify(jsonData);
+
+        $.postJSON('/humans/like', jsonData, function(result) {
+            alert(result.APIMessage);
+            if(result.APICode == 200) {
+                $('.Humans_counts').text(result.APIPayload);
+            }
+        })
+    });
 });
