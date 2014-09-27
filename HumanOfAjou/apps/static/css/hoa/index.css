@@ -403,3 +403,9 @@ background: none repeat scroll 0 0 #999999;
 .collapse{
 	float: right;
 }
+
+pre {
+    white-space:pre-line;
+    border : none;
+    line-height: 1.5;
+}
