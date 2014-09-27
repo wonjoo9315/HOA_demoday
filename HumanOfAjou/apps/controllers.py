@@ -120,7 +120,7 @@ def ajou_thumbnail():
 
 @app.route('/upload', methods=['GET'])
 def upload():
-    return render_template("upload_forms.htaml", active_tab='ajou_tab')
+    return render_template("upload_forms.html", active_tab='ajou_tab')
 
 
 @app.route('/photo/get/<path:blob_key>/', methods=['GET'])

@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+
+
     $(window).scroll(function () {
         // get scroll position
         var s = $(window).scrollTop();
@@ -10,28 +12,6 @@ $(document).ready(function () {
     });
 
 
-// navbar fixed by scroll
-    $(window).bind('scroll', function () {
-        var srlTop = $(this).scrollTop();
-        var winHeight = $(window).height();
-        if (srlTop > winHeight - 53) {
-            $('#Header_nav_bar').css({ position: 'fixed', top: '300px', left: '0px'});
-            $('#Header_nav_bar li').css({ float: 'none'});
-            $('#Header_nav_bar li').css({ width: '96px'});
-
-            $('.Prev_detail').css({position: 'fixed', top: '330px', left: '50px'});
-            $('.Next_detail').css({position: 'fixed', top: '330px', right: '50px'});
-        }
-        else {
-            $('#Header_nav_bar').css({ position: 'relative', top: '0px', left: '0px'});
-            $('#Header_nav_bar li').css({ float: 'left'});
-            $('#Header_nav_bar li').css({ width: '96px'});
-
-
-            $('.Prev_detail').css({position: 'relative'});
-            $('.Next_detail').css({position: 'relative'});
-        }
-    });
     $('input[type="radio"]').radio();
 
     //vendor script
@@ -83,15 +63,31 @@ $(document).ready(function () {
     });
 
 
-    // by kimjinoh
+    //scroll action -navbar
 
     $(window).on('scroll', function() {
+        var detailHeight = $('.Detail_Container').attr("height");
+
         var srlTop = $(this).scrollTop();
         var winHeight = $(window).height();
         if (srlTop > winHeight - 53) {
-            $('.Humans_Navbar').attr('style', 'background: #ffffff;');
+            $('.Humans_Navbar').attr('style', 'background: #ffffff; border:solid 1px;');
         } else {
             $('.Humans_Navbar').attr('style', 'background: transparent;');
+        }
+    });
+    //scroll action -glyphen
+    $(window).bind('scroll', function () {
+        var srlTop = $(this).scrollTop();
+        var winHeight = $(window).height();
+        if (srlTop > winHeight - 800) {
+
+            $('.Prev_detail').css({position: 'fixed', top: '350px', left: '50px'});
+            $('.Next_detail').css({position: 'fixed', top: '350px', right: '50px'});
+        }
+        else {
+            $('.Prev_detail').css({position: 'relative'});
+            $('.Next_detail').css({position: 'relative'});
         }
     });
 });
