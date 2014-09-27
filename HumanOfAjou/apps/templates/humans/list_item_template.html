@@ -2,7 +2,7 @@
     <a href="{{ url_for('humans_detail', id=humans.id) }}" style = "text-decoration:none; color:black;font-color:black">
         <div class="imgholder">
             {% if humans.photo %}
-                <img src="{{ url_for('photo_get', blob_key=humans.photo) }}"/>
+                <img src="{{ url_for('photo_get_resized', blob_key=humans.photo) }}"/>
 
             {% else %}
                 <p>이미지가 없습니다.</p>
