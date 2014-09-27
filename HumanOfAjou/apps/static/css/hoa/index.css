@@ -127,7 +127,7 @@ a:hover, a:active{
 }
 
 .grid:hover{
-	box-shadow: 2px 2px 10px gray;
+	box-shadow: 2px 2px 7px lightgray;
 
 }
 .grid strong {
