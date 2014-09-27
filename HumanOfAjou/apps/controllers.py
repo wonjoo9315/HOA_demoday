@@ -145,7 +145,7 @@ def photo_get_resized(blob_key):
         logging.warn(blob_info)
         if blob_info:
             img = images.Image(blob_key=blob_key)
-            img.resize(width=300, height=300)
+            img.resize(width=800, height=800)
             img.im_feeling_lucky()
             thumbnail = img.execute_transforms(output_encoding=images.PNG)
 
