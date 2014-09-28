@@ -81,7 +81,6 @@ $(document).ready(function () {
         var srlTop = $(this).scrollTop();
         var winHeight = $(window).height();
         if (srlTop > 350 && srlTop < winHeight + detailHeight) {
-
             $('.Prev_detail').css({position: 'fixed', top: '350px', left: '50px'});
             $('.Next_detail').css({position: 'fixed', top: '350px', right: '50px'});
         }
