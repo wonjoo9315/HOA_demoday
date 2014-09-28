@@ -66,12 +66,10 @@ $(document).ready(function () {
     //scroll action -navbar
 
     $(window).on('scroll', function() {
-        var detailHeight = $('.Detail_Container').attr("height");
-
         var srlTop = $(this).scrollTop();
         var winHeight = $(window).height();
-        if (srlTop > winHeight - 53) {
-            $('.Humans_Navbar').attr('style', 'background: #ffffff; border:solid 1px;');
+        if (srlTop > winHeight) {
+            $('.Humans_Navbar').attr('style', 'background: #ffffff;');
         } else {
             $('.Humans_Navbar').attr('style', 'background: transparent;');
         }
@@ -79,16 +77,17 @@ $(document).ready(function () {
 
     //scroll action -glyphen
     $(window).bind('scroll', function () {
+        var detailHeight = $('.Detail_Container').attr("height");
         var srlTop = $(this).scrollTop();
         var winHeight = $(window).height();
-        if (srlTop > winHeight - 800) {
+        if (srlTop > 350 && srlTop < winHeight + detailHeight) {
 
             $('.Prev_detail').css({position: 'fixed', top: '350px', left: '50px'});
             $('.Next_detail').css({position: 'fixed', top: '350px', right: '50px'});
         }
         else {
-            $('.Prev_detail').css({position: 'relative'});
-            $('.Next_detail').css({position: 'relative'});
+            $('.Prev_detail').css({position: 'relative', left:'50px'});
+            $('.Next_detail').css({position: 'relative', right:'50px'});
         }
     });
 

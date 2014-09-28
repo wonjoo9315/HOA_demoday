@@ -12,7 +12,7 @@ class Humans(db.Model):
 
     @classmethod
     def count(cls):
-        return cls.query.all().count()
+        return cls.query.count()
 
 
 class LikeRecord(db.Model):
