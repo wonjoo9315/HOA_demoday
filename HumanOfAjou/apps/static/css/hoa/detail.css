@@ -17,12 +17,12 @@ body p{
 header, section, footer, hgroup{
 	display:block;
 }
-a {
-	color:#35BFFF;
-	text-decoration:none;
+
+a i {
+	color: black;
 }
-a:hover, a:active{
-	color:#91DCFF;
+a i:hover{
+	color: #D50F0F;
 }
 
 /*BACK GROUND IMAGE*/
@@ -101,11 +101,11 @@ margin: 0 auto;
 
 	
 }
-.Humans_transparent{
+.Humans_detail_transparent{
 	display: block;
 	background: transparent;
 	width:100%;
-	height:400px;
+	height:800px;
 	position : relative;
 }
 .Humans_content{
@@ -121,7 +121,8 @@ margin: 0 auto;
 
 /*여기서부터는 detail 내용*/
 .Prev_detail{
-	top : 350px;
+	top : 500px;
+	left : 50px;
 	float: left;
 	width: 100px;
 	height: 100px;
@@ -133,7 +134,8 @@ margin: 0 auto;
 
 
 .Next_detail{
-	top : 350px;
+	top : 500px;
+	right:50px;
 	float: right;
 	width: 100px;
 	height: 100px;
@@ -148,7 +150,7 @@ margin: 0 auto;
 }
 .Detail_Container{
 	margin : 0 auto;
-	width: 60%;
+	width: 50%;
 	height: auto;
 	/*border: solid;*/
 
