@@ -18,6 +18,8 @@ class LikeRecord(db.Model):
     humans_id = db.Column(db.Integer, db.ForeignKey('humans.id'))
     humans = db.relationship('Humans', backref=db.backref('likeCounts', lazy='dynamic'))
 
+    hash_code = db.Column(db.String(255))
+
     # multiple unique constraint
     __table_args__ = (UniqueConstraint('humans_id', 'ip',  name='_like_humans'),)
     date_created = db.Column(db.DateTime(), default=db.func.now())
@@ -27,6 +29,8 @@ class ViewRecord(db.Model):
     ip = db.Column(db.String(50))
     humans_id = db.Column(db.Integer, db.ForeignKey('humans.id'))
     humans = db.relationship('Humans', backref=db.backref('viewCounts', lazy='dynamic'))
+
+    hash_code = db.Column(db.String(255))
 
     # multiple unique constraint
     __table_args__ = (UniqueConstraint('humans_id', 'ip', name='_view_humans'),)

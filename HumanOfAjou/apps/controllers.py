@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import render_template, request, url_for, flash, redirect, make_response, jsonify
+from flask import render_template, request, url_for, flash, redirect, make_response, jsonify, session
 from apps import app, db
 from sqlalchemy import desc
 from google.appengine.api import images
@@ -9,7 +9,17 @@ from google.appengine.ext import blobstore
 from werkzeug.http import parse_options_header
 import logging
 import json
+import hashlib
+import datetime
 from apps.APIResponse import APIResponse
+
+@app.before_request
+def before_request():
+    if not 'hash_code' in session:
+        session['hash_code'] = hashlib.sha1("hoaHashCode" + str(datetime.datetime.now())).hexdigest()[:16]
+
+    logging.debug('---- Before Request -----')
+    logging.debug(session)
 
 
 @app.route('/', methods=['GET'])
@@ -26,7 +36,7 @@ def humans_detail(id):
     humans = Humans.query.get(id)
 
     try:
-        exist_view = ViewRecord.query.filter_by(humans=humans, ip=request.remote_addr).count()
+        exist_view = ViewRecord.query.filter_by(humans=humans, ip=request.remote_addr, hash_code=session['hash_code']).count()
     except:
         exist_view = None
 
@@ -35,7 +45,8 @@ def humans_detail(id):
     else:
         vr = ViewRecord(
             humans=humans,
-            ip=request.remote_addr
+            ip=request.remote_addr,
+            hash_code=session['hash_code']
         )
         db.session.add(vr)
         db.session.commit()
@@ -53,7 +64,7 @@ def humans_like():
     humans = Humans.query.get(humans_id)
 
     try:
-        exist_like = LikeRecord.query.filter_by(humans=humans, ip=request.remote_addr).count()
+        exist_like = LikeRecord.query.filter_by(humans=humans, ip=request.remote_addr, hash_code=session['hash_code']).count()
     except:
         exist_like = None
 
@@ -67,7 +78,8 @@ def humans_like():
     else:
         like_record = LikeRecord(
             humans=humans,
-            ip=request.remote_addr
+            ip=request.remote_addr,
+            hash_code=session['hash_code']
         )
         db.session.add(like_record)
         db.session.commit()
@@ -82,6 +94,8 @@ def humans_like():
                 APIPayload=humans.like_count
             ).generate
         )
+
+
 
 
 @app.route('/manager', methods=['GET'])
