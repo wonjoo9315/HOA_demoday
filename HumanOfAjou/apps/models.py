@@ -10,6 +10,10 @@ class Humans(db.Model):
     like_count = db.Column(db.Integer, default=0)
     view_count = db.Column(db.Integer, default=0)
 
+    @classmethod
+    def count(cls):
+        return cls.query.all().count()
+
 
 class LikeRecord(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -21,7 +25,7 @@ class LikeRecord(db.Model):
     hash_code = db.Column(db.String(255))
 
     # multiple unique constraint
-    __table_args__ = (UniqueConstraint('humans_id', 'ip',  name='_like_humans'),)
+    __table_args__ = (UniqueConstraint('humans_id', 'ip', 'hash_code',  name='_like_humans'),)
     date_created = db.Column(db.DateTime(), default=db.func.now())
 
 class ViewRecord(db.Model):
@@ -33,7 +37,7 @@ class ViewRecord(db.Model):
     hash_code = db.Column(db.String(255))
 
     # multiple unique constraint
-    __table_args__ = (UniqueConstraint('humans_id', 'ip', name='_view_humans'),)
+    __table_args__ = (UniqueConstraint('humans_id', 'ip', 'hash_code', name='_view_humans'),)
     date_created = db.Column(db.DateTime(), default=db.func.now())
 
 

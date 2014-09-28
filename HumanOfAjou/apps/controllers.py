@@ -16,7 +16,7 @@ from apps.APIResponse import APIResponse
 @app.before_request
 def before_request():
     if not 'hash_code' in session:
-        session['hash_code'] = hashlib.sha1("hoaHashCode" + str(datetime.datetime.now())).hexdigest()[:16]
+        session['hash_code'] = hashlib.sha1("hoaHashCode:" + str(datetime.datetime.now())).hexdigest()[:16]
 
     logging.debug('---- Before Request -----')
     logging.debug(session)
@@ -55,6 +55,13 @@ def humans_detail(id):
         db.session.commit()
     return render_template("humans/detail.html", humans=humans, active_tab='humans_tab', title='HUMANS')
 
+
+# @app.route('/humans/count', methods=['GET'])
+# def humans_count():
+#     count = Humans.query.all().count()
+#
+#     return count
+#
 
 @app.route('/humans/like', methods=['POST'])
 def humans_like():

@@ -83,6 +83,12 @@
                         </div>
                     </div>
                 </div> -->
+                <div class="Humans_detail_button_area">
+                    <a href="{{ url_for('humans_list') }}">
+                        <div class="btn btn-default btn-month-question">
+                            <span>다른 응답 보러가기</span>
+                        </div>
+                    </a>
                 <i class="fa fa-eye"></i><span class="Humans_counts">{{ humans.view_count}}</span>
                 <a href="javascript:;" class="js-humansLike" data-humans-id="{{ humans.id }}"><i class="fa fa-heart"></i></a>
                 <span class="Humans_counts">{{ humans.like_count }}</span>
