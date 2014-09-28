@@ -108,19 +108,23 @@
                 <div class="Humans_member_header">
                     <h5 style="text-align:center">MEMBERS</h5>
 
-                    <div class="Humans_introduce_video"></div>
+                    <div class="Humans_introduce_video">
+                        <img src=../static/images/members.jpg"/>
+                    </div>
 
                 </div>
             </div>
             <div class="Humans_border"></div>
             <div class="Are_you_ready">
                 <div class="Are_you_ready_content">
-                    <h5 style="text-align:center">ARE YOU READY TO PEEK THEIR STORIES?</h5>
+                    <h5 style="text-align:center">ARE YOU READY TO PICK THEIR STORIES?</h5>
 
                     <div class="Humans_botton_middle">
-                        <button class="btn btn-embossed btn-primary">
-                            ENTER THE HUMANS OF AJOU
-                        </button>
+                        <a href="{{ url_for('humans_list') }}">
+                            <button class="btn btn-embossed btn-primary">
+                                ENTER THE HUMANS OF AJOU
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
